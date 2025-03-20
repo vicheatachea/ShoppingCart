@@ -47,7 +47,6 @@ pipeline {
             steps {
                 // Ensure Docker is using the default context
                 script {
-                    sh 'docker context use default' // Switch to default context
                     docker.build("${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}")
                 }
             }
